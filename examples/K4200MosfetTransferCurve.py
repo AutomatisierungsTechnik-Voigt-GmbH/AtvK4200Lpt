@@ -51,7 +51,7 @@ def MosfetTransferCurve(numPoints, endVoltage):
     lpt.tstsel(1)
     lpt.devint()
 
-    # get gate, drain and source SMU ID
+    # get gate, drain and source SMU
     smuGate = lpt.getinstid("SMU1")
     smuDrain = lpt.getinstid("SMU2")
     smuSource = lpt.getinstid("SMU3")
@@ -78,11 +78,15 @@ def MosfetTransferCurve(numPoints, endVoltage):
 
     # initialize plot
     plt.ion()
+    fig = plt.figure()
+    axes = fig.add_subplot(111)
+    line, = axes.plot(vArr, iArr, 'b-')
+
     plt.title("Mosfet transfer curve")
     plt.xlabel("Gate voltage (V)") 
     plt.ylabel("Drain current (A)")
     plt.grid(True)
-    
+
     # measurement loop
     for index in range(0, numPoints):
 
@@ -104,11 +108,17 @@ def MosfetTransferCurve(numPoints, endVoltage):
         iArr.append(i)
 
         # output gate voltage and drain current
-        print("v={}, i={}".format(v, i))
+        print("Gate: {:2.3f} V, Drain: {:2.3g} mA".format(v, i * 1000.0))
 
-        # update curve
-        plt.plot(vArr, iArr)
-        plt.pause(0.001)
+        # update plot curve
+        line.set_data(vArr, iArr)
+
+        # autoscale plot
+        axes.relim()
+        axes.autoscale_view(True, True, True)
+
+        #redraw curve
+        fig.canvas.draw()
 
     # reset SMUs to default values
     lpt.devint()
