@@ -139,5 +139,5 @@ def MosfetOutputCurve(gateStartVolt, gateEndVolt, gateStepVolt, drainStartVolt, 
     # reset SMUs to default values
     lpt.devint()
 
-# start transfer curve measurement
+# start output curve measurement
 MosfetOutputCurve(1.5, 3, 0.25, 0, 3, 0.05)
