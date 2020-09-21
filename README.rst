@@ -27,6 +27,7 @@ The Keithley LPT library (linear parametric test library) is used to control the
 Keithley 4200A-SCS instruments. This is a 32 bit library. Therefore you need a 32 bit Python version.
 
 Download a 32 bit python version (3.8.xx) here:
+
 `<https://www.python.org/downloads/windows/>`
 
 Installation
@@ -34,7 +35,7 @@ Installation
 
 Binary installer
 ****************
-The easiest way to install the Keithley 4200A-SCS python extension module is to use
+The easiest way to install the Keithley 4200A-SCS Python extension module is to use
 the binary installer:
 
 `<https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.8.exe>`
@@ -48,15 +49,16 @@ Python extension module folder:
 
 Hints
 #####
-The Keithley 4200A-SCS sets the Python path and python home variables. This might result in trouble if you
+The Keithley 4200A-SCS sets the Python path and python home variables. This can cause problems if you
 want to start your own installed Python environment (e.g. Python IDLE).
 
 Use the batch file "Start Python IDLE.bat" to start IDLE with default Python path and home.
+
 (`<https://github.com/ATV-GmbH/AtvK4200Lpt/blob/master/Start%20Python%20IDLE%203.8.bat>`)
 
 Examples
 ########
-Examples to use the Python module can be found in the examples folder:
+You can find examples of the use of the module in the examples folder:
 
 `<https://github.com/ATV-GmbH/AtvK4200Lpt/tree/master/examples>`
 
@@ -88,7 +90,7 @@ Step 3: control instrument
 **************************
 .. code-block:: python
 
-    # get gate, drain and source SMU
+    # get gate, drain and source SMU ID
     smuGate = lpt.getinstid("SMU1")
     smuDrain = lpt.getinstid("SMU2")
     smuSource = lpt.getinstid("SMU3")

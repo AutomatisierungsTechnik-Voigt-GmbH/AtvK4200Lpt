@@ -51,7 +51,7 @@ def MosfetTransferCurve(numPoints, endVoltage):
     lpt.tstsel(1)
     lpt.devint()
 
-    # get gate, drain and source SMU
+    # get gate, drain and source SMU ID
     smuGate = lpt.getinstid("SMU1")
     smuDrain = lpt.getinstid("SMU2")
     smuSource = lpt.getinstid("SMU3")
