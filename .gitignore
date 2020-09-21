@@ -1,0 +1,7 @@
+
+*.log
+/.vs/*
+/.vscode/*
+/Release/*
+/source/Release/*
+/build/temp.*

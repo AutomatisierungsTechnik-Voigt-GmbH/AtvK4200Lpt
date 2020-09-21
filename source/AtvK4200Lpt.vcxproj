@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{CF5E4B04-1FE4-4A8F-8540-4349BDA2589A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>cd ..
+rmdir /Q /S build
+python setup.py build --compiler=msvc --plat-name=win32</NMakeBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>$(LocalAppData)\Programs\Python\Python38-32\include;$(IncludePath)</IncludePath>
+    <NMakeReBuildCommandLine>cd ..
+rmdir /Q /S build
+python setup.py build --compiler=msvc --plat-name=win32</NMakeReBuildCommandLine>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="DllLoader.h" />
+    <ClInclude Include="K4200Errors.h" />
+    <ClInclude Include="K4200Instruments.h" />
+    <ClInclude Include="K4200LptLibrary.h" />
+    <ClInclude Include="K4200ModuleInstruments.h" />
+    <ClInclude Include="K4200ModuleLptLibrary.h" />
+    <ClInclude Include="K4200ModuleLptLibraryFunctions.h" />
+    <ClInclude Include="K4200ModuleParameters.h" />
+    <ClInclude Include="K4200Parameters.h" />
+    <ClInclude Include="PythonHelper.h" />
+    <ClInclude Include="WindowsErrorMessage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DllLoader.cpp" />
+    <ClCompile Include="K4200Errors.cpp" />
+    <ClCompile Include="K4200LptLibrary.cpp" />
+    <ClCompile Include="K4200ModuleInstruments.cpp" />
+    <ClCompile Include="K4200ModuleLptLibrary.cpp" />
+    <ClCompile Include="K4200ModuleLptLibraryFunctions.cpp" />
+    <ClCompile Include="K4200ModuleParameters.cpp" />
+    <ClCompile Include="PythonHelper.cpp" />
+    <ClCompile Include="WindowsErrorMessage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE" />
+    <None Include="..\module_build.bat" />
+    <None Include="..\module_dist.bat" />
+    <None Include="..\module_install.bat" />
+    <None Include="..\README.rst" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

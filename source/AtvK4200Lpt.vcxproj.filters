@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien\utils">
+      <UniqueIdentifier>{98360acf-539a-4438-8dd3-a62fc9f9c855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\helper">
+      <UniqueIdentifier>{5d58ff74-4870-46bb-85f6-9ba5a500f0dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\utils">
+      <UniqueIdentifier>{6553effb-013a-40a3-8985-41a04c6b30fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\helper">
+      <UniqueIdentifier>{2db1515f-62f3-41da-aa85-88e93743fa5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\module">
+      <UniqueIdentifier>{aee65025-9d75-41cf-837d-b5610122639a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\module">
+      <UniqueIdentifier>{b3289f5c-7e7c-4d74-82b5-c10a5ee08e92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\k4200">
+      <UniqueIdentifier>{8c2ccfaa-7c02-40e2-b0a6-1aab5e2961ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\k4200">
+      <UniqueIdentifier>{0d2d3abc-3d35-4baa-a9c5-4049fce2681a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PythonHelper.h">
+      <Filter>Headerdateien\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="DllLoader.h">
+      <Filter>Headerdateien\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsErrorMessage.h">
+      <Filter>Headerdateien\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="K4200ModuleInstruments.h">
+      <Filter>Headerdateien\module</Filter>
+    </ClInclude>
+    <ClInclude Include="K4200ModuleLptLibrary.h">
+      <Filter>Headerdateien\module</Filter>
+    </ClInclude>
+    <ClInclude Include="K4200ModuleParameters.h">
+      <Filter>Headerdateien\module</Filter>
+    </ClInclude>
+    <ClInclude Include="K4200ModuleLptLibraryFunctions.h">
+      <Filter>Headerdateien\module</Filter>
+    </ClInclude>
+    <ClInclude Include="K4200Errors.h">
+      <Filter>Headerdateien\k4200</Filter>
+    </ClInclude>
+    <ClInclude Include="K4200Instruments.h">
+      <Filter>Headerdateien\k4200</Filter>
+    </ClInclude>
+    <ClInclude Include="K4200LptLibrary.h">
+      <Filter>Headerdateien\k4200</Filter>
+    </ClInclude>
+    <ClInclude Include="K4200Parameters.h">
+      <Filter>Headerdateien\k4200</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PythonHelper.cpp">
+      <Filter>Quelldateien\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="DllLoader.cpp">
+      <Filter>Quelldateien\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowsErrorMessage.cpp">
+      <Filter>Quelldateien\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="K4200ModuleInstruments.cpp">
+      <Filter>Quelldateien\module</Filter>
+    </ClCompile>
+    <ClCompile Include="K4200ModuleLptLibrary.cpp">
+      <Filter>Quelldateien\module</Filter>
+    </ClCompile>
+    <ClCompile Include="K4200ModuleParameters.cpp">
+      <Filter>Quelldateien\module</Filter>
+    </ClCompile>
+    <ClCompile Include="K4200ModuleLptLibraryFunctions.cpp">
+      <Filter>Quelldateien\module</Filter>
+    </ClCompile>
+    <ClCompile Include="K4200Errors.cpp">
+      <Filter>Quelldateien\k4200</Filter>
+    </ClCompile>
+    <ClCompile Include="K4200LptLibrary.cpp">
+      <Filter>Quelldateien\k4200</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="..\module_build.bat">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="..\module_dist.bat">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="..\module_install.bat">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="..\README.rst">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+  </ItemGroup>
+</Project>
