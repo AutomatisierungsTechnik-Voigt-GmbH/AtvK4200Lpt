@@ -49,20 +49,46 @@
 namespace utils
 {
     //-----------------------------------------------------------------------------
-    
+
+    /// <summary>
+    /// DLL loader class.
+    /// </summary>
     class DllLoader
     {
     public:
 
+        /// <summary>
+        /// Creates a new instance.
+        /// </summary>
         DllLoader();
+
+        /// <summary>
+        /// Destructor.
+        /// </summary>
         virtual ~DllLoader();
 
+        /// <summary>
+        /// Loads a DLL.
+        /// </summary>
+        /// <param name="dllName">The DLL name.</param>
         void Load(const std::string & dllName);
 
+        /// <summary>
+        /// Unloads the DLL.
+        /// </summary>
         void Free();
 
+        /// <summary>
+        /// Returns true if a DLL is loaded.
+        /// </summary>
+        /// <returns>True if DLL is loaded.</returns>
         bool IsLoaded() const;
 
+        /// <summary>
+        /// Retrieves a DLL function pointer.
+        /// </summary>
+        /// <param name="funcPtr">A variable that stores the DLL function pointer.</param>
+        /// <param name="funcName">The DLL function name.</param>
         template <typename T_FuncPtr>
         void GetDllFunc(T_FuncPtr & funcPtr, const std::string & funcName)
         {
@@ -74,6 +100,10 @@ namespace utils
                 throw std::runtime_error("DllLoader: function " + funcName + " not found in DLL " + _dllName);
         }
 
+        /// <summary>
+        /// Returns the handle oof the loaded DLL.
+        /// </summary>
+        /// <returns>The DLL handle.</returns>
         const void * GetDllHandle() { return _dll; }
 
     private:

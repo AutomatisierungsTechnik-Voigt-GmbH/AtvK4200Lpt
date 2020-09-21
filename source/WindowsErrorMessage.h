@@ -39,6 +39,9 @@ namespace utils
 {
     //-----------------------------------------------------------------------------
 
+    /// <summary>
+    /// Windows error message utils.
+    /// </summary>
     class WindowsErrorMessage
     {
     public:
