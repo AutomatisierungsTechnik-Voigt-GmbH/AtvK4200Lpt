@@ -42,7 +42,7 @@ import k4200parameters as param
 import matplotlib.pyplot as plt
 
 # Function to measure mosfet transfer curve.
-def MosfetTransferCurve(numPoints, endVoltage):
+def MosfetTransferCurve(gateStartVolt, gateEndVolt, gateStepVolt, drainStartVolt, drainEndVolt, drainStepVolt):
 
     # load lpt library
     lpt.initialize()
@@ -66,62 +66,78 @@ def MosfetTransferCurve(numPoints, endVoltage):
     # set initial voltages
     lpt.forcev(smuSource, 0)
     lpt.forcev(smuGate, 0)
-    lpt.forcev(smuDrain, 0.1)
+    lpt.forcev(smuDrain, 0)
     
     # set measurement integration time
-    lpt.setmode(smuGate, param.KI_INTGPLC, 1.0);
-    lpt.setmode(smuDrain, param.KI_INTGPLC, 1.0);
-    
-    # initialize the arrays to store the measurement data
-    vArr = []
-    iArr = []
+    lpt.setmode(smuGate, param.KI_INTGPLC, 0.01);
+    lpt.setmode(smuDrain, param.KI_INTGPLC, 0.01);
 
+    # disable range delay
+    lpt.setmode(smuDrain, param.KI_RANGE_DELAY, 0)
+    
     # initialize plot
     plt.ion()
     fig = plt.figure()
     axes = fig.add_subplot(111)
-    line, = axes.plot(vArr, iArr, 'b-')
 
     plt.title("Mosfet transfer curve")
     plt.xlabel("Gate voltage (V)") 
     plt.ylabel("Drain current (A)")
     plt.grid(True)
 
-    # measurement loop
-    for index in range(0, numPoints):
+    # calculate point count
+    gateIndexEnd = int(round((gateEndVolt - gateStartVolt) / gateStepVolt))
+    drainIndexEnd = int(round((drainEndVolt - drainStartVolt) / drainStepVolt))
+    
+    # gate voltage loop
+    for gateIndex in range(0, gateIndexEnd):
 
-        # calculate the gate voltage
-        voltGate = index / numPoints * endVoltage
-
-        # force gate voltage
-        lpt.forcev(smuGate, voltGate)
-
-        # settling time 10 ms
-        lpt.delay(10)
-
-        # measue gate voltage and drain current
-        v = lpt.intgv(smuGate)
-        i = lpt.intgi(smuDrain)
+        # calculate and force gate voltage
+        gateVolt = gateStartVolt + gateStepVolt * gateIndex
+        lpt.forcev(smuGate, gateVolt)
         
-        # store measurement values in arrays
-        vArr.append(v)
-        iArr.append(i)
+        # initialize the arrays to store the measurement data
+        vArr = []
+        iArr = []
 
-        # output gate voltage and drain current
-        print("Gate: {:2.3f} V, Drain: {:2.3g} mA".format(v, i * 1000.0))
+        line, = axes.plot(vArr, iArr, 'b-')
+        
+        # drain voltage loop
+        for drainIndex in range(0, drainIndexEnd):
 
-        # update plot curve
-        line.set_data(vArr, iArr)
+            # calculate and force drain voltage
+            drainVolt = drainStartVolt + drainStepVolt * drainIndex
+            lpt.forcev(smuDrain, drainVolt)
 
-        # autoscale plot
-        axes.relim()
-        axes.autoscale_view(True, True, True)
+            # settling time 10 ms
+            lpt.delay(10)
 
-        # redraw curve
-        fig.canvas.draw()
+            # measue gate voltage and drain current
+            v = lpt.intgv(smuDrain)
+            i = lpt.intgi(smuDrain)
+            
+            # store measurement values in arrays
+            vArr.append(v)
+            iArr.append(i)
 
+            # output gate voltage and drain current
+            print("Gate: {:2.3f} V, Drain: {:2.3f} V, {:2.3g} mA".format(gateVolt, v, i * 1000.0))
+
+            # update plot curve
+            line.set_data(vArr, iArr)
+
+            # autoscale plot
+            axes.relim()
+            axes.autoscale_view(True, True, True)
+
+            # redraw curve
+            fig.canvas.draw()
+
+        # set drain voltage to 0 V before a new loop starts
+        lpt.forcev(smuDrain, 0)
+        
     # reset SMUs to default values
     lpt.devint()
 
 # start transfer curve measurement
-MosfetTransferCurve(100, 5)
+MosfetTransferCurve(1.5, 3, 0.25, 0, 3, 0.05)
