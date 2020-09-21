@@ -26,7 +26,8 @@ Software requirements
 The Keithley LPT library (linear parametric test library) is used to control the
 Keithley 4200A-SCS instruments. This is a 32 bit library. Therefore you need a 32 bit Python version.
 
-Download a 32 bit python version (3.8.xx) here:
+Download a 32 bit Python version (3.8.xx) here:
+
 `<https://www.python.org/downloads/windows/>`_
 
 Installation
@@ -48,11 +49,10 @@ Python extension module folder:
 
 Hints
 #####
-The Keithley 4200A-SCS sets the Python path and python home variables. This might result in trouble if you
+The Keithley 4200A-SCS sets the Python path and python home variables. This can cause problems if you
 want to start your own installed Python environment (e.g. Python IDLE).
 
 Use the batch file "Start Python IDLE.bat" to start IDLE with default Python path and home.
-
 (`Start Python IDLE 3.8.bat <https://github.com/ATV-GmbH/AtvK4200Lpt/blob/master/Start%20Python%20IDLE%203.8.bat>`_)
 
 Examples
