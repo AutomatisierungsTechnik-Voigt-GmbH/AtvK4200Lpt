@@ -42,7 +42,7 @@ import k4200parameters as param
 import matplotlib.pyplot as plt
 
 # Function to measure mosfet transfer curve.
-def MosfetTransferCurve(gateStartVolt, gateEndVolt, gateStepVolt, drainStartVolt, drainEndVolt, drainStepVolt):
+def MosfetOutputCurve(gateStartVolt, gateEndVolt, gateStepVolt, drainStartVolt, drainEndVolt, drainStepVolt):
 
     # load lpt library
     lpt.initialize()
@@ -140,4 +140,4 @@ def MosfetTransferCurve(gateStartVolt, gateEndVolt, gateStepVolt, drainStartVolt
     lpt.devint()
 
 # start transfer curve measurement
-MosfetTransferCurve(1.5, 3, 0.25, 0, 3, 0.05)
+MosfetOutputCurve(1.5, 3, 0.25, 0, 3, 0.05)
