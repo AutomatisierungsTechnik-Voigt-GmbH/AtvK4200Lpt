@@ -47,7 +47,7 @@ def MosfetOutputCurve(gateStartVolt, gateEndVolt, gateStepVolt, drainStartVolt, 
     # load lpt library
     lpt.initialize()
 
-    # initialie K4200
+    # initialize K4200
     lpt.tstsel(1)
     lpt.devint()
 
