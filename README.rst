@@ -40,11 +40,11 @@ the binary installer:
 
 `AtvK4200Lpt-1.0.win32-py3.8.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.8.exe>`_
 
-`AtvK4200Lpt-1.0.win32-py3.8.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.7.exe>`_
+`AtvK4200Lpt-1.0.win32-py3.7.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.7.exe>`_
 
-`AtvK4200Lpt-1.0.win32-py3.8.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.6.exe>`_
+`AtvK4200Lpt-1.0.win32-py3.6.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.6.exe>`_
 
-`AtvK4200Lpt-1.0.win32-py3.8.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.5.exe>`_
+`AtvK4200Lpt-1.0.win32-py3.5.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.5.exe>`_
 
 Manual Installation
 *******************
