@@ -59,9 +59,12 @@ namespace module
     PyObject * K4200Lpt_tstsel(PyObject *self, PyObject *args);
     PyObject * K4200Lpt_setauto(PyObject *self, PyObject *args);
     PyObject * K4200Lpt_pulse_init(PyObject *self, PyObject *args);
-    PyObject * K4200Lpt_cvu_custom_cable_comp(PyObject *self, PyObject *args);
     PyObject * K4200Lpt_pulse_halt(PyObject *self, PyObject *args);
     PyObject * K4200Lpt_rtfary(PyObject *self, PyObject *args);
+    PyObject * K4200Lpt_cvu_open_comp(PyObject *self, PyObject *args);
+    PyObject * K4200Lpt_cvu_short_comp(PyObject *self, PyObject *args);
+    PyObject * K4200Lpt_cvu_load_comp(PyObject *self, PyObject *args);
+    PyObject * K4200Lpt_cvu_custom_cable_comp(PyObject *self, PyObject *args);
 
     PyObject * K4200Lpt_forcei(PyObject *self, PyObject *args);
     PyObject * K4200Lpt_forcev(PyObject *self, PyObject *args);

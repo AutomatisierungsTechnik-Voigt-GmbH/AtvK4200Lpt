@@ -146,6 +146,10 @@ namespace k4200
     extern int32_t(WINAPI *f_asweepv)(int32_t instr_id, int32_t numberOfPoints, double delayTime, double *forceArray);
     extern int32_t(WINAPI *f_bsweepi)(int32_t instr_id, double startval, double endval, int32_t num_points, double delay_time, double *result);
     extern int32_t(WINAPI *f_bsweepv)(int32_t instr_id, double startval, double endval, int32_t num_points, double delay_time, double *result);
+
+    extern int32_t(WINAPI *f_cvu_open_comp)(int32_t instr_id);
+    extern int32_t(WINAPI *f_cvu_short_comp)(int32_t instr_id);
+    extern int32_t(WINAPI *f_cvu_load_comp)(int32_t instr_id, double load);
     extern int32_t(WINAPI *f_cvu_custom_cable_comp)(int32_t instr_id);
 
 } // namespace k4200

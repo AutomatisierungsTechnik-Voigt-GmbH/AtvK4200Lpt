@@ -156,8 +156,10 @@ PyObject * K4200Lpt_##NAME(PyObject *self, PyObject *args) \
     FUNC_I(tstsel)
     FUNC_I(setauto)
     FUNC_I(pulse_init)
-    FUNC_I(cvu_custom_cable_comp)
     FUNC_I(pulse_halt)
+    FUNC_I(cvu_open_comp)
+    FUNC_I(cvu_short_comp)
+    FUNC_I(cvu_custom_cable_comp)
 
 #undef FUNC_I
 
@@ -223,6 +225,7 @@ PyObject * K4200Lpt_##NAME(PyObject *self, PyObject *args) \
     FUNC_I_D(setfreq)
     FUNC_I_D(setlevel)
     FUNC_I_D(pulse_period)
+    FUNC_I_D(cvu_load_comp)
 
 #undef FUNC_I_D
 

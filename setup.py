@@ -50,7 +50,7 @@ moduleParameters = Extension('k4200parameters',
 longDescription = ""
 
 setup (name = 'AtvK4200Lpt',
-       version = '1.0',
+       version = '1.1',
        description = 'Python support for K4200 lpt library.',
        author='Torsten Brischalle, Automatisierungstechnik Voigt GmbH',
        author_email='atv@atv-systems.de',

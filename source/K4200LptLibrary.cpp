@@ -48,8 +48,10 @@ namespace k4200
     int32_t(WINAPI *f_tstsel)(int32_t teststation) = nullptr;
     int32_t(WINAPI *f_setauto)(int32_t) = nullptr;
     int32_t(WINAPI *f_pulse_init)(int32_t instr_id) = nullptr;
-    int32_t(WINAPI *f_cvu_custom_cable_comp)(int32_t instr_id) = nullptr;
     int32_t(WINAPI *f_pulse_halt)(int32_t instr_id) = nullptr;
+    int32_t(WINAPI *f_cvu_open_comp)(int32_t instr_id) = nullptr;
+    int32_t(WINAPI *f_cvu_short_comp)(int32_t instr_id) = nullptr;
+    int32_t(WINAPI *f_cvu_custom_cable_comp)(int32_t instr_id) = nullptr;
 
     int32_t(WINAPI *f_rtfary)(double *forceArray) = nullptr;
 
@@ -66,6 +68,7 @@ namespace k4200
     int32_t(WINAPI *f_setfreq)(int32_t instid, double frequency) = nullptr;
     int32_t(WINAPI *f_setlevel)(int32_t instid, double signalLevel) = nullptr;
     int32_t(WINAPI *f_pulse_period)(int32_t instr_id, double period) = nullptr;
+    int32_t(WINAPI *f_cvu_load_comp)(int32_t, double) = nullptr;
 
     int32_t(WINAPI *f_measi)(int32_t, double *) = nullptr;
     int32_t(WINAPI *f_measv)(int32_t, double *) = nullptr;
@@ -264,6 +267,10 @@ namespace k4200
         _lptLibrary.GetDllFunc(f_asweepi, "asweepi");
         _lptLibrary.GetDllFunc(f_bsweepi, "bsweepi");
         _lptLibrary.GetDllFunc(f_bsweepv, "bsweepv");
+
+        _lptLibrary.GetDllFunc(f_cvu_open_comp, "cvu_open_comp");
+        _lptLibrary.GetDllFunc(f_cvu_short_comp, "cvu_short_comp");
+        _lptLibrary.GetDllFunc(f_cvu_load_comp, "cvu_load_comp");
         _lptLibrary.GetDllFunc(f_cvu_custom_cable_comp, "cvu_custom_cable_comp");
     }
 
