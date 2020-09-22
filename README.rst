@@ -15,7 +15,7 @@ ATV K4200 LPT Python Module
 Preface
 #######
 This is a Python extensions module to control the Keithley 4200A-SCS instruments from
-the Python programming language (Python version 3.8).
+the Python programming language.
 
 Hardware requirements
 *********************
@@ -26,7 +26,7 @@ Software requirements
 The Keithley LPT library (linear parametric test library) is used to control the
 Keithley 4200A-SCS instruments. This is a 32 bit library. Therefore you need a 32 bit Python version.
 
-Download a 32 bit Python version (3.8.xx) here:
+Download a 32 bit Python version (3.8.x) here:
 
 `<https://www.python.org/downloads/windows/>`_
 
@@ -39,6 +39,12 @@ The easiest way to install the Keithley 4200A-SCS python extension module is to 
 the binary installer:
 
 `AtvK4200Lpt-1.0.win32-py3.8.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.8.exe>`_
+
+`AtvK4200Lpt-1.0.win32-py3.8.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.7.exe>`_
+
+`AtvK4200Lpt-1.0.win32-py3.8.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.6.exe>`_
+
+`AtvK4200Lpt-1.0.win32-py3.8.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.0/AtvK4200Lpt-1.0.win32-py3.5.exe>`_
 
 Manual Installation
 *******************
