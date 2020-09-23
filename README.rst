@@ -53,20 +53,6 @@ Python extension module folder:
 
 `/build/lib.win32-3.8 <https://github.com/ATV-GmbH/AtvK4200Lpt/tree/master/build/lib.win32-3.8>`_
 
-Hints
-#####
-The Keithley 4200A-SCS sets the Python path and python home variables. This can cause problems if you
-want to start your own installed Python environment (e.g. Python IDLE).
-
-Use the batch file "Start Python IDLE.bat" to start IDLE with default Python path and home.
-(`Start Python IDLE 3.8.bat <https://github.com/ATV-GmbH/AtvK4200Lpt/blob/master/Start%20Python%20IDLE%203.8.bat>`_)
-
-Examples
-########
-Examples to use the Python module can be found in the examples folder:
-
-`/examples <https://github.com/ATV-GmbH/AtvK4200Lpt/tree/master/examples>`_
-
 Python usage
 ############
 
@@ -108,9 +94,23 @@ Step 3: control instrument
     lpt.limiti(smuSource, 11E-3)
     lpt.limiti(smuDrain, 10E-3)
 
+Examples
+########
+Examples to use the Python module can be found in the examples folder:
+
+`/examples <https://github.com/ATV-GmbH/AtvK4200Lpt/tree/master/examples>`_
+
 Documentation
 #############
 See Keithley 4200A-SCS reference manual for available LPT library functions und usage.
+
+Hints for using Python on a Keithley 4200
+#########################################
+The Keithley 4200A-SCS sets the Python path and python home variables. This can cause problems if you
+want to start your own installed Python environment (e.g. Python IDLE).
+
+Use the batch file "Start Python IDLE.bat" to start IDLE with default Python path and home.
+(`Start Python IDLE 3.8.bat <https://github.com/ATV-GmbH/AtvK4200Lpt/blob/master/Start%20Python%20IDLE%203.8.bat>`_)
 
 Build the module from source
 ############################
