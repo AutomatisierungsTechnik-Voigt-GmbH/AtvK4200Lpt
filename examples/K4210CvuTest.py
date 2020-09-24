@@ -66,12 +66,30 @@ vArr, cpArr, gpArr, tArr = cvu.MeasureCV(dcVoltStart = -5.0,
                                          dcVoltEnd = 5.0,
                                          dcVoltStep = 0.1,
                                          tSet = 0.1,
+                                         initialDelay = 1.0,
                                          acVoltage = 50E-3,
-                                         frequency = 100E3)
+                                         frequency = 100E3,
+                                         cvuSpeed = K4210CvuSpeed.Slow)
 
 
+# initialize plot
+plt.ion()
+fig = plt.figure()
+axes = fig.add_subplot(111)
+line, = axes.plot(vArr, cpArr, 'b-')
+
+plt.title("CV Sweep")
+plt.xlabel("Voltage (V)") 
+plt.ylabel("Cp (F)")
+plt.grid(True)
 
 
+# update plot curve
+#line.set_data(vArr, cpArr)
+
+axes.relim()
+axes.autoscale_view(True, True, True)
+fig.canvas.draw()
 
 
 

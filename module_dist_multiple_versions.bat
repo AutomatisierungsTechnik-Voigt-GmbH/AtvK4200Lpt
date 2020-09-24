@@ -21,6 +21,8 @@ python setup.py sdist
 
 %PYTHONEXE% setup.py bdist_wininst
 
+@REM PAUSE
+
 @EXIT /b
 
 

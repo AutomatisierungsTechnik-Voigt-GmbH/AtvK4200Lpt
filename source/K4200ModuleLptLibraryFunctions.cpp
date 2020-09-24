@@ -487,7 +487,7 @@ PyObject * K4200Lpt_##NAME(PyObject *self, PyObject *args) \
 
         int instId, parameter;
 
-        if (!PyArg_ParseTuple(args, "id", &instId, &parameter))
+        if (!PyArg_ParseTuple(args, "ii", &instId, &parameter))
             return nullptr;
 
         double value = 0;
