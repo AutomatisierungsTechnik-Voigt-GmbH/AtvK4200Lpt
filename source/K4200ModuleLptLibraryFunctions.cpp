@@ -37,6 +37,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 using namespace k4200;
@@ -79,9 +80,11 @@ namespace module
         {
             return true;
         }
-
-        string errMsg = string("Keithley 4200 error ") + to_string(returnValue) + " in function " + funcName + ": " + K4200LptErrors::TranslateErrorCode(returnValue);
-        PyErr_SetString(GetK4200LptLibraryError(), errMsg.c_str());
+        
+        ostringstream ss;
+        ss << "Keithley 4200 error " << returnValue << " in function " << funcName << ": " << K4200LptErrors::TranslateErrorCode(returnValue);
+        
+        PyErr_SetString(GetK4200LptLibraryError(), ss.str().c_str());
         return false;
     }
 
