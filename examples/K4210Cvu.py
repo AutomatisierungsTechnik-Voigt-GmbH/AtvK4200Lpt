@@ -140,9 +140,9 @@ class K4210Cvu:
     #-----------------------------------------------------------------------------------------------
         
     def MeasureCV(self,
-                  dcVoltStart, dcVoltEnd, dcVoltStep,
-                  tSet,
-                  acVoltage, frequency,
+                  dcVoltageStart, dcVoltageEnd, dcVoltageStep,
+                  settlingTime,
+                  acVoltage, acFrequency,
                   initialDelay = 0.5,
                   cvuRange = K4210CvuRange.Auto,
                   cvuSpeed = K4210CvuSpeed.Normal,
@@ -150,12 +150,12 @@ class K4210Cvu:
         """
         Performs a CV measurement.
 
-        :param dcVoltStart:
-        :param dcVoltEnd:
-        :param dcVoltStep:
-        :param tSet: Settling time in seconds for DC voltage sweep.
+        :param dcVoltageStart:
+        :param dcVoltageEnd:
+        :param dcVoltageStep:
+        :param settlingTime: Settling time in seconds for DC voltage sweep.
         :param acVoltage: AC voltage level (1e-3 to 0.1).
-        :param frequency: Frequence for CVU AC voltage (10 kHz to 10 MHz).
+        :param acFrequency: Frequence for CVU AC voltage (10 kHz to 10 MHz).
         :param initialDelay: Delay time after apply first voltage and before the first measurement starts.
         :param cvuRange: CVU measurement range (see K4210CvuRange).
         :param cvuSpeed: CVU measurement speed (see K4210CvuSpeed).
@@ -163,8 +163,8 @@ class K4210Cvu:
 
         cvuId = self.__cvuId
 
-        dcVoltMax = max(abs(dcVoltStart), abs(dcVoltEnd))
-        dcVoltPoints = int(round((dcVoltEnd - dcVoltStart) / dcVoltStep + 1.0))
+        dcVoltMax = max(abs(dcVoltageStart), abs(dcVoltageEnd))
+        dcVoltPoints = int(round((dcVoltageEnd - dcVoltageStart) / dcVoltageStep + 1.0))
 
         # initialize CVU
         lpt.forcev(cvuId, 0)
@@ -176,7 +176,7 @@ class K4210Cvu:
 
         # set AC voltage
         lpt.setlevel(cvuId, acVoltage)
-        lpt.setfreq(cvuId, frequency)
+        lpt.setfreq(cvuId, acFrequency)
         lpt.rangei(cvuId, cvuRange.value)
 
         # CVU speed settings
@@ -194,17 +194,17 @@ class K4210Cvu:
         tArr = []
 
         # apply first voltage
-        lpt.forcev(cvuId, dcVoltStart)
+        lpt.forcev(cvuId, dcVoltageStart)
         lpt.delay(int(initialDelay * 1000))
         
         # sweep DC voltage
         for dcVoltIndex in range(0, dcVoltPoints):
 
-            dcVolt = dcVoltStart + dcVoltStep * dcVoltIndex
+            dcVolt = dcVoltageStart + dcVoltageStep * dcVoltIndex
 
             # force DC voltage
             lpt.forcev(cvuId, dcVolt)
-            lpt.delay(int(tSet * 1000))
+            lpt.delay(int(settlingTime * 1000))
 
             # measure impedance
             cp, gp = lpt.measz(cvuId, param.KI_CVU_TYPE_CPGP, cvuSpeedVal)

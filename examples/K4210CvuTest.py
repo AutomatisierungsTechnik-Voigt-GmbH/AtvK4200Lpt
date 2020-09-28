@@ -62,13 +62,13 @@ cvu.CableLength = 1.5
 #cvu.MakeCompensation(selectLoad = False)
 #cvu.LoadCompensationConstants()
 
-vArr, cpArr, gpArr, tArr = cvu.MeasureCV(dcVoltStart = -5.0,
-                                         dcVoltEnd = 5.0,
-                                         dcVoltStep = 0.1,
-                                         tSet = 0.1,
+vArr, cpArr, gpArr, tArr = cvu.MeasureCV(dcVoltageStart = -5.0,
+                                         dcVoltageEnd = 5.0,
+                                         dcVoltageStep = 0.1,
+                                         settlingTime = 0.1,
                                          initialDelay = 1.0,
                                          acVoltage = 50E-3,
-                                         frequency = 100E3,
+                                         acFrequency = 100E3,
                                          cvuSpeed = K4210CvuSpeed.Slow)
 
 
