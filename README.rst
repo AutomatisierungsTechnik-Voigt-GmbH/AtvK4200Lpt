@@ -46,6 +46,8 @@ the binary installer:
 
 `AtvK4200Lpt-1.1.win32-py3.5.exe <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.1/AtvK4200Lpt-1.1.win32-py3.5.exe>`_
 
+`AtvK4200Lpt-1.1.win32-py3.4.exe (Windows XP, Keithley 4200-SCS) <https://github.com/ATV-GmbH/AtvK4200Lpt/releases/download/1.1/AtvK4200Lpt-1.1.win32-py3.4.exe>`_
+
 Manual Installation
 *******************
 You can install the extension module manually by copying the files from the build folder to the
