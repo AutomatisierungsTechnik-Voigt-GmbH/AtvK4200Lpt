@@ -13,7 +13,7 @@
     :target: https://github.com/ATV-GmbH/AtvK4200Lpt/issues
 
 .. image:: https://img.shields.io/github/downloads/ATV-GmbH/AtvK4200Lpt/total.svg
-    :target: https://github.com/ATV-GmbH/AtvK4200Lpt/releases/tag/v1.2
+    :target: https://github.com/ATV-GmbH/AtvK4200Lpt/releases/tag/v1.1
 
 ***************************
 ATV K4200 LPT Python Module
