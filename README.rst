@@ -1,9 +1,3 @@
-.. image:: https://img.shields.io/github/issues/ATV-GmbH/AtvK4200Lpt.svg?maxAge=360
-    :target: https://github.com/ATV-GmbH/AtvK4200Lpt/issues
-
-.. image:: https://img.shields.io/github/downloads/ATV-GmbH/AtvK4200Lpt/total.svg
-    :target: https://github.com/ATV-GmbH/AtvK4200Lpt/releases/tag/v1.2
-
 .. image:: https://www.atv-systems.de/around4/templates/atv2013/files/media/Logo/logo-atvoigt.png
 
 | AutomatisierungsTechnik Voigt GmbH
@@ -13,6 +7,12 @@
 
 | web: `<https://www.atv-systems.de>`_
 | email: atv@atv-systems.de
+
+.. image:: https://img.shields.io/github/issues/ATV-GmbH/AtvK4200Lpt.svg?maxAge=360
+    :target: https://github.com/ATV-GmbH/AtvK4200Lpt/issues
+
+.. image:: https://img.shields.io/github/downloads/ATV-GmbH/AtvK4200Lpt/total.svg
+    :target: https://github.com/ATV-GmbH/AtvK4200Lpt/releases/tag/v1.2
 
 ***************************
 ATV K4200 LPT Python Module
