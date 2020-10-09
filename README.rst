@@ -124,11 +124,10 @@ Use the batch files to build the module from source:
 * module_dist.bat: compiles the modules and creates the binary and source code installer (output to folder *dist*)
 * module_install.bat: compiles the module and installs the module to the local Python environment.
 
-
-.. image:: https://www.atv-systems.de/around4/templates/atv2013/files/media/Logo/logo-atvoigt.png
-
 Author
 #####
+
+.. image:: https://www.atv-systems.de/around4/templates/atv2013/files/media/Logo/logo-atvoigt.png
 
 Torsten Brischalle
 
