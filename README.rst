@@ -1,13 +1,6 @@
-.. image:: https://www.atv-systems.de/around4/templates/atv2013/files/media/Logo/logo-atvoigt.png
-
-| AutomatisierungsTechnik Voigt GmbH
-| Heilbronner Str. 17
-| 01189 Dresden
-| Germany
-
-| web: `<https://www.atv-systems.de>`_
-| email: atv@atv-systems.de
-
+***************************
+Keithley 4200 Python Module for the controlling the LPT Library
+***************************
 
 .. image:: https://img.shields.io/github/issues/ATV-GmbH/AtvK4200Lpt.svg?maxAge=360
     :target: https://github.com/ATV-GmbH/AtvK4200Lpt/issues
@@ -15,9 +8,6 @@
 .. image:: https://img.shields.io/github/downloads/ATV-GmbH/AtvK4200Lpt/total.svg
     :target: https://github.com/ATV-GmbH/AtvK4200Lpt/releases
 
-***************************
-ATV K4200 LPT Python Module
-***************************
 
 Preface
 #######
@@ -134,8 +124,12 @@ Use the batch files to build the module from source:
 * module_dist.bat: compiles the modules and creates the binary and source code installer (output to folder *dist*)
 * module_install.bat: compiles the module and installs the module to the local Python environment.
 
+
+.. image:: https://www.atv-systems.de/around4/templates/atv2013/files/media/Logo/logo-atvoigt.png
+
 Author
 #####
+
 Torsten Brischalle
 
 | AutomatisierungsTechnik Voigt GmbH
@@ -143,5 +137,5 @@ Torsten Brischalle
 | 01189 Dresden
 | Germany
 
-| web:   https://www.atv-systems.de
+| web: `<https://www.atv-systems.de>`_
 | email: atv@atv-systems.de
